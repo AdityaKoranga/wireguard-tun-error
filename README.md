@@ -25,3 +25,7 @@ PresharedKey =
 AllowedIPs = 
 PersistentKeepalive = 
 Endpoint = 
+```
+
+The PostUp line tells WireGuard to run the command resolvectl dns %i 8.8.8.8 after the interface has been successfully established. The %i variable is replaced by the name of the WireGuard interface. So, if your WireGuard interface is named "Adi", the command becomes resolvectl dns Adi 8.8.8.8.
+
