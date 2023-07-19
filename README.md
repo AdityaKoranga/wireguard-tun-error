@@ -6,6 +6,19 @@ If you ever get this error:
 
 `Failed to resolve interface "tun": No such device`
 
+Then check the output of this command:
+```bash
+modprobe wireguard
+```
+
+If it says: `Module not found`, then download the `WireGuard kernel module`:
+
+```bash
+sudo apt-get install wireguard-dkms
+```
+
+And that should work and if you still face the issue , then follow the below step:
+
 Then change the `conf file` like this:
 
 Under the `[Interface]` section of the conf file:
@@ -34,13 +47,4 @@ If you get this error:
 
 ![image](https://github.com/AdityaKoranga/wireguard-tun-error/assets/95766110/6a42b8de-e99c-4499-862d-54850b21c201)
 
-Then check the output of this command:
-```bash
-modprobe wireguard
-```
-
-If it says: `Module not found`, then download the `WireGuard kernel module`:
-
-```bash
-sudo apt-get install wireguard-dkms
-```
+Install the module.
